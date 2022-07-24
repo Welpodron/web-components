@@ -1,0 +1,122 @@
+---
+title: Сворачиваемый контент
+sidebar_position: 4
+pagination_prev: null
+pagination_next: javascript/javascript-components/welpodron-accordion
+---
+
+# welpodron.collapse
+
+Сворачиваемый контент
+
+<div className="container shadow--lw padding-vert--sm">
+  <button
+    className="button button--secondary margin--sm"
+    data-action="toggle"
+    data-collapse-id="collapse_example"
+    type="button"
+  >
+    <b>(collapse.control)</b> <b>(toggle)</b> Свернуть/Развернуть
+  </button>
+  <div className="margin--sm" data-collapse data-active id="collapse_example">
+    <p>
+      <b>(collapse)</b> Это некий заполнитель для горизонтального сворачивания.
+      По умолчанию он скрыт. Однако, если ему добавить атрибут{" "}
+      <b>(data-active)</b> то он будет открыт по умолчанию как в этом примере.
+      Для того чтобы открыть содержимое свернутого контента можно
+      воспользоваться следующими <b>(data-action)</b> у{" "}
+      <b>(collapse.control)</b>: <b>(show)</b>. Для того чтобы скрыть содержимое
+      свернутого контента можно воспользоваться следующими <b>(data-action)</b>{" "}
+      у <b>(collapse.control)</b>: <b>(hide)</b>. Для того чтобы переключать
+      состояния скрытия/открытия содержимое свернутого контента можно
+      воспользоваться следующими <b>(data-action)</b> у{" "}
+      <b>(collapse.control)</b>: <b>(toggle)</b>.
+    </p>
+  </div>
+</div>
+
+```html
+<button data-action="toggle" data-collapse-id="collapse_example" type="button">
+  <b>(collapse.control)</b> <b>(toggle)</b> Свернуть/Развернуть
+</button>
+<div data-collapse data-active id="collapse_example">
+  <p>
+    <b>(collapse)</b> Это некий заполнитель для горизонтального сворачивания. По
+    умолчанию он скрыт. Однако, если ему добавить атрибут
+    <b>(data-active)</b> то он будет открыт по умолчанию как в этом примере. Для
+    того чтобы открыть содержимое свернутого контента можно воспользоваться
+    следующими <b>(data-action)</b> у <b>(collapse.control)</b>: <b>(show)</b>.
+    Для того чтобы скрыть содержимое свернутого контента можно воспользоваться
+    следующими <b>(data-action)</b> у <b>(collapse.control)</b>: <b>(hide)</b>.
+    Для того чтобы переключать состояния скрытия/открытия содержимое свернутого
+    контента можно воспользоваться следующими <b>(data-action)</b> у
+    <b>(collapse.control)</b>: <b>(toggle)</b>.
+  </p>
+</div>
+```
+
+## Установка / Подключение
+
+Список PHP библиотек:
+
+- welpodron.core
+
+Список зависимостей:
+
+- <a href="/javascript/javascript-modules/welpodron-animation">
+    welpodron.animation
+  </a>
+
+:::caution Внимание
+
+Перед подключением компонента убедитесь, что все необходимые для требуемого компонента зависимости установлены и подключены!
+
+:::
+
+Установка и подключение компонента происходит в соответствии с <a href="/javascript/intro#установка-модулейкомпонентов">документацией</a>
+
+## Использование
+
+### Использование через HTML
+
+```html title="html"
+<div
+  data-collapse-id="collapse_id"
+  data-action="[toggle] [show] [hide]"
+  [data-args]
+>
+  Это collapse.control ...
+</div>
+<div id="collapse_id" data-collapse [data-active]>Это collapse ...</div>
+```
+
+## HTML атрибуты
+
+### collapse
+
+- Атрибут: `id`
+  - Описание: _**Уникальный** идентификатор компонента_
+  - Обязателен: **Да**
+- Атрибут: `data-collapse`
+  - Описание: _Указатель компонента_
+  - Обязателен: **Да**
+- Атрибут: `data-active`
+  - Описание: _Указатель развернутости сворачиваемого контента_
+  - Обязателен: Нет
+
+### collapse.control
+
+- Атрибут: `data-collapse-id`
+  - Описание: _Идентификатор collapse_
+  - Обязателен: **Да**
+  - Возможные значения: Значение атрибута `id` у `collapse`
+- Атрибут: `data-action`
+  - Описание: _Экшн компонента_
+  - Обязателен: **Да**
+  - Возможные значения:
+    - `toggle`
+      - Описание: _Свернуть сворачиваемый контент, если он развернут; Развернуть сворачиваемый контент, если он свернут_
+    - `show`
+      - Описание: _Развернуть сворачиваемый контент_
+    - `hide`
+      - Описание: _Свернуть сворачиваемый контент_

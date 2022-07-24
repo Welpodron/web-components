@@ -1,0 +1,133 @@
+---
+title: Модальное окно
+sidebar_position: 100
+pagination_prev: null
+pagination_next: null
+---
+
+# welpodron.modal
+
+Модальное окно
+
+<div id="modal_example" data-modal>
+  <div className="card">
+    <div className="card__body">
+      <p>
+        <b>(modal)</b> Это некий заполнитель для содержимого модального окна. По
+        умолчанию он скрыт. Для того чтобы открыть содержимое модального окна
+        можно воспользоваться следующими <b>(data-action)</b> у{" "}
+        <b>(modal.control)</b>: <b>(show)</b>. Для того чтобы скрыть содержимое
+        модального окна можно воспользоваться следующими <b>(data-action)</b> у{" "}
+        <b>(modal.control)</b>: <b>(hide)</b>.
+      </p>
+      <p>
+        Также модальное окно можно закрыть нажав клавишу <b>Esc</b> или{" "}
+        <b>щелкнув левой кнопкой мыши вне содержимого модального окна</b>
+      </p>
+      <button className="button button--secondary" data-action="hide" data-modal-id="modal_example" type="button">
+        <b>(modal.control)</b> <b>(hide)</b> Скрыть модальное окно (при открытии
+        модального окна фокус попадет на меня и застрянет внутри модального окна)
+      </button>
+    </div>
+  </div>
+</div>
+
+<div className="container shadow--lw padding-vert--sm">
+  <button className="button button--secondary margin--sm" data-action="show" data-modal-id="modal_example" type="button">
+    <b>(modal.control)</b> <b>(show)</b> Показать модальное окно
+  </button>
+</div>
+
+```html
+<div id="modal_example" data-modal>
+  <div>
+    <div>
+      <p>
+        <b>(modal)</b> Это некий заполнитель для содержимого модального окна. По
+        умолчанию он скрыт. Для того чтобы открыть содержимое модального окна
+        можно воспользоваться следующими <b>(data-action)</b> у
+        <b>(modal.control)</b>: <b>(show)</b>. Для того чтобы скрыть содержимое
+        модального окна можно воспользоваться следующими <b>(data-action)</b> у
+        <b>(modal.control)</b>: <b>(hide)</b>.
+      </p>
+      <p>
+        Также модальное окно можно закрыть нажав клавишу <b>Esc</b> или
+        <b>щелкнув левой кнопкой мыши вне содержимого модального окна</b>
+      </p>
+      <button data-action="hide" data-modal-id="modal_example" type="button">
+        <b>(modal.control)</b> <b>(hide)</b> Скрыть модальное окно (при открытии
+        модального окна фокус попадет на меня и застрянет внутри модального окна)
+      </button>
+    </div>
+  </div>
+</div>
+
+<button data-action="show" data-modal-id="modal_example" type="button">
+  <b>(modal.control)</b> <b>(show)</b> Показать модальное окно
+</button>
+```
+
+## Установка / Подключение
+
+Список PHP библиотек:
+
+- welpodron.core
+
+Список зависимостей:
+
+- <a href="/javascript/javascript-modules/welpodron-animation">
+    welpodron.animation
+  </a>
+
+:::caution Внимание
+
+Перед подключением компонента убедитесь, что все необходимые для требуемого компонента зависимости установлены и подключены!
+
+:::
+
+Установка и подключение компонента происходит в соответствии с <a href="/javascript/intro#установка-модулейкомпонентов">документацией</a>
+
+## Использование
+
+### Использование через HTML
+
+```html title="html"
+...
+<div data-modal-id="modal_id" data-action="[show] [hide]" [data-args]>
+  Это modal.control ...
+</div>
+...
+<div id="modal_id" data-modal [data-force] [data-once]>Это modal ...</div>
+```
+
+## HTML атрибуты
+
+### modal
+
+- Атрибут: `id`
+  - Описание: _**Уникальный** идентификатор компонента_
+  - Обязателен: **Да**
+- Атрибут: `data-modal`
+  - Описание: _Указатель компонента_
+  - Обязателен: **Да**
+- Атрибут: `data-force`
+  - Описание: _Показать содержимое модального окна сразу же после загрузки страницы_
+  - Обязателен: Нет
+- Атрибут: `data-once`
+  - Описание: _После скрытия своего содержимого модальное окно будет уничтожено_
+  - Обязателен: Нет
+
+### modal.control
+
+- Атрибут: `data-modal-id`
+  - Описание: _Идентификатор modal_
+  - Обязателен: **Да**
+  - Возможные значения: Значение атрибута `id` у `modal`
+- Атрибут: `data-action`
+  - Описание: _Экшн компонента_
+  - Обязателен: **Да**
+  - Возможные значения:
+    - `show`
+      - Описание: _Показать содержимое модального окна_
+    - `hide`
+      - Описание: _Скрыть содержимое модального окна_

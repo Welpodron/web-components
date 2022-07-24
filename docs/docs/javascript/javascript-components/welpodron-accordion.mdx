@@ -1,0 +1,233 @@
+---
+title: Аккордеон
+sidebar_position: 5
+pagination_prev: javascript/javascript-components/welpodron-collapse
+pagination_next: null
+---
+
+# welpodron.accordion
+
+Аккордеон
+
+<div className="container shadow--lw padding-vert--sm" data-accordion>
+  <button
+    data-action="toggle"
+    data-collapse-id="collapse_example_01"
+    type="button"
+    className="button button--block button--secondary margin--sm"
+  >
+    <b>(collapse.control)</b> <b>(toggle)</b> Свернуть/Развернуть
+  </button>
+  <div data-accordion-item data-collapse data-active id="collapse_example_01">
+    <p>
+      <b>(collapse accordion.item)</b> Это некий заполнитель для горизонтального
+      сворачивания. По умолчанию он скрыт. Однако, если ему добавить атрибут{" "}
+      <b>(data-active)</b> то он будет открыт по умолчанию . Для того чтобы
+      открыть содержимое свернутого контента можно воспользоваться следующими{" "}
+      <b>(data-action)</b> у <b>(collapse.control)</b>: <b>(show)</b>. Для того
+      чтобы скрыть содержимое свернутого контента можно воспользоваться
+      следующими <b>(data-action)</b> у <b>(collapse.control)</b>: <b>(hide)</b>
+      . Для того чтобы переключать состояния скрытия/открытия содержимое
+      свернутого контента можно воспользоваться следующими <b>(data-action)</b>{" "}
+      у <b>(collapse.control)</b>: <b>(toggle)</b>.
+    </p>
+  </div>
+  <button
+    data-action="toggle"
+    data-collapse-id="collapse_example_02"
+    type="button"
+    className="button button--block button--secondary margin--sm"
+  >
+    <b>(collapse.control)</b> <b>(toggle)</b> Свернуть/Развернуть
+  </button>
+  <div data-accordion-item data-collapse id="collapse_example_02">
+    <p>
+      <b>(collapse accordion.item)</b> Это некий заполнитель для горизонтального
+      сворачивания. По умолчанию он скрыт. Однако, если ему добавить атрибут{" "}
+      <b>(data-active)</b> то он будет открыт по умолчанию . Для того чтобы
+      открыть содержимое свернутого контента можно воспользоваться следующими{" "}
+      <b>(data-action)</b> у <b>(collapse.control)</b>: <b>(show)</b>. Для того
+      чтобы скрыть содержимое свернутого контента можно воспользоваться
+      следующими <b>(data-action)</b> у <b>(collapse.control)</b>: <b>(hide)</b>
+      . Для того чтобы переключать состояния скрытия/открытия содержимое
+      свернутого контента можно воспользоваться следующими <b>(data-action)</b>{" "}
+      у <b>(collapse.control)</b>: <b>(toggle)</b>.
+    </p>
+  </div>
+  <button
+    data-action="toggle"
+    data-collapse-id="collapse_example_03"
+    type="button"
+    className="button button--block button--secondary margin--sm"
+  >
+    <b>(collapse.control)</b> <b>(toggle)</b> Свернуть/Развернуть
+  </button>
+  <div data-accordion-item data-collapse id="collapse_example_03">
+    <p>
+      <b>(collapse accordion.item)</b> Это некий заполнитель для горизонтального
+      сворачивания. По умолчанию он скрыт. Однако, если ему добавить атрибут{" "}
+      <b>(data-active)</b> то он будет открыт по умолчанию . Для того чтобы
+      открыть содержимое свернутого контента можно воспользоваться следующими{" "}
+      <b>(data-action)</b> у <b>(collapse.control)</b>: <b>(show)</b>. Для того
+      чтобы скрыть содержимое свернутого контента можно воспользоваться
+      следующими <b>(data-action)</b> у <b>(collapse.control)</b>: <b>(hide)</b>
+      . Для того чтобы переключать состояния скрытия/открытия содержимое
+      свернутого контента можно воспользоваться следующими <b>(data-action)</b>{" "}
+      у <b>(collapse.control)</b>: <b>(toggle)</b>.
+    </p>
+  </div>
+</div>
+
+```html
+<div data-accordion>
+  <button
+    data-action="toggle"
+    data-collapse-id="collapse_example_01"
+    type="button"
+  >
+    <b>(collapse.control)</b> <b>(toggle)</b> Свернуть/Развернуть
+  </button>
+  <div data-accordion-item data-collapse data-active id="collapse_example_01">
+    <p>
+      <b>(collapse accordion.item)</b> Это некий заполнитель для горизонтального
+      сворачивания. По умолчанию он скрыт. Однако, если ему добавить атрибут
+      <b>(data-active)</b> то он будет открыт по умолчанию . Для того чтобы
+      открыть содержимое свернутого контента можно воспользоваться следующими
+      <b>(data-action)</b> у <b>(collapse.control)</b>: <b>(show)</b>. Для того
+      чтобы скрыть содержимое свернутого контента можно воспользоваться
+      следующими <b>(data-action)</b> у <b>(collapse.control)</b>:
+      <b>(hide)</b>. Для того чтобы переключать состояния скрытия/открытия
+      содержимое свернутого контента можно воспользоваться следующими
+      <b>(data-action)</b> у <b> (collapse.control) </b>: <b>(toggle)</b>.
+    </p>
+  </div>
+  <button
+    data-action="toggle"
+    data-collapse-id="collapse_example_02"
+    type="button"
+  >
+    <b>(collapse.control)</b> <b>(toggle)</b> Свернуть/Развернуть
+  </button>
+  <div data-accordion-item data-collapse id="collapse_example_02">
+    <p>
+      <b>(collapse accordion.item)</b> Это некий заполнитель для горизонтального
+      сворачивания. По умолчанию он скрыт. Однако, если ему добавить атрибут
+      <b>(data-active)</b> то он будет открыт по умолчанию . Для того чтобы
+      открыть содержимое свернутого контента можно воспользоваться следующими
+      <b>(data-action)</b> у <b>(collapse.control)</b>: <b>(show)</b>. Для того
+      чтобы скрыть содержимое свернутого контента можно воспользоваться
+      следующими <b>(data-action)</b> у <b>(collapse.control)</b>:
+      <b>(hide)</b>. Для того чтобы переключать состояния скрытия/открытия
+      содержимое свернутого контента можно воспользоваться следующими
+      <b>(data-action)</b> у <b> (collapse.control) </b>: <b>(toggle)</b>.
+    </p>
+  </div>
+  <button
+    data-action="toggle"
+    data-collapse-id="collapse_example_03"
+    type="button"
+  >
+    <b>(collapse.control)</b> <b>(toggle)</b> Свернуть/Развернуть
+  </button>
+  <div data-accordion-item data-collapse id="collapse_example_03">
+    <p>
+      <b>(collapse accordion.item)</b> Это некий заполнитель для горизонтального
+      сворачивания. По умолчанию он скрыт. Однако, если ему добавить атрибут
+      <b>(data-active)</b> то он будет открыт по умолчанию . Для того чтобы
+      открыть содержимое свернутого контента можно воспользоваться следующими
+      <b>(data-action)</b> у <b>(collapse.control)</b>: <b>(show)</b>. Для того
+      чтобы скрыть содержимое свернутого контента можно воспользоваться
+      следующими <b>(data-action)</b> у <b>(collapse.control)</b>:
+      <b>(hide)</b>. Для того чтобы переключать состояния скрытия/открытия
+      содержимое свернутого контента можно воспользоваться следующими
+      <b>(data-action)</b> у <b> (collapse.control) </b>: <b>(toggle)</b>.
+    </p>
+  </div>
+</div>
+```
+
+## Установка / Подключение
+
+Список PHP библиотек:
+
+- welpodron.core
+
+Список зависимостей:
+
+- <a href="/javascript/javascript-components/welpodron-collapse">
+    welpodron.collapse
+  </a>
+
+:::caution Внимание
+
+Перед подключением компонента убедитесь, что все необходимые для требуемого компонента зависимости установлены и подключены!
+
+:::
+
+Установка и подключение компонента происходит в соответствии с <a href="/javascript/intro#установка-модулейкомпонентов">документацией</a>
+
+## Использование
+
+### Использование через HTML
+
+```html title="html"
+<div data-accordion>
+  Это accordion ...
+  <div
+    data-collapse-id="collapse_example_01"
+    data-action="[toggle] [show] [hide]"
+    [data-args]
+  >
+    Это collapse.control ...
+  </div>
+  <div [data-active] data-accordion-item id="collapse_example_01" data-collapse>
+    Это collapse и accordion.item ...
+  </div>
+  <div
+    data-collapse-id="collapse_example_02"
+    data-action="[toggle] [show] [hide]"
+    [data-args]
+  >
+    Это collapse.control ...
+  </div>
+  <div [data-active] data-accordion-item id="collapse_example_02" data-collapse>
+    Это collapse и accordion.item ...
+  </div>
+  ...
+  <div
+    data-collapse-id="collapse_example_03"
+    data-action="[toggle] [show] [hide]"
+    [data-args]
+  >
+    Это collapse.control ...
+  </div>
+  <div [data-active] data-accordion-item id="collapse_example_03" data-collapse>
+    Это collapse и accordion.item ...
+  </div>
+  ...
+</div>
+```
+
+## HTML атрибуты
+
+### accordion
+
+- Атрибут: `data-accordion`
+  - Описание: _Указатель компонента_
+  - Обязателен: **Да**
+
+### collapse (accordion.item)
+
+- Атрибут: `data-accordion-item`
+  - Описание: _Указатель принадлежности к компоненту `accordion`_
+  - Обязателен: **Да\***
+
+\* - в случае если атрибут `data-accordion-item` не будет указан, тег, лежащий внутри тега с атрибутом `accordion`, не будет восприниматься как элемент `accordion`
+
+**Остальные атрибуты доступные <a href="/javascript/javascript-components/welpodron-collapse#collapse">collapse</a>**
+
+в случае если атрибут `data-active` не будет указан ни одному `data-accordion-item` - активным элементом станет первый найденный `data-accordion-item`, лежащий внутри `accordion`
+
+### collapse.control
+
+**Остальные атрибуты доступные <a href="/javascript/javascript-components/welpodron-collapse#collapsecontrol">collapse.control</a>**

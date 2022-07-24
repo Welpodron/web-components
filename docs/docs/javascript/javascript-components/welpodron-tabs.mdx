@@ -1,0 +1,225 @@
+---
+title: Табы
+sidebar_position: 100
+pagination_prev: null
+pagination_next: null
+---
+
+# welpodron.tabs
+
+Табы
+
+<div className="container shadow--lw padding-vert--sm">
+  <button
+    data-action="show"
+    data-tabs-id="tabs_example"
+    data-args="0"
+    type="button"
+    className="button button--secondary margin--sm"
+  >
+    <b>(tabs.control)</b> <b>(show)</b> <b>(0)</b> Показать элемент 0
+  </button>
+  <button
+    data-action="show"
+    data-tabs-id="tabs_example"
+    data-args="1"
+    type="button"
+    className="button button--secondary margin--sm"
+  >
+    <b>(tabs.control)</b> <b>(show)</b> <b>(1)</b> Показать элемент 1
+  </button>
+  <button
+    data-action="show"
+    data-tabs-id="tabs_example"
+    data-args="2"
+    type="button"
+    className="button button--secondary margin--sm"
+  >
+    <b>(tabs.control)</b> <b>(show)</b> <b>(2)</b> Показать элемент 2
+  </button>
+  <div className="margin--sm" id="tabs_example" data-tabs>
+    <div data-active data-tabs-item>
+      <p>
+        <b>(tabs.item)</b>. Данный элемент имеет порядковый номер: <b>0</b>. Это
+        некий заполнитель для элемента табов, который располагается строго
+        внутри <b>(tabs)</b>. По умолчанию он скрыт. Однако, если ему добавить
+        атрибут <b>(data-active)</b> то он будет открыт. Чтобы показать элемент
+        табов можно воспользоваться следующими <b>(data-action)</b> у{" "}
+        <b>(tabs.control)</b>: <b>(show)</b> с <b>(args)</b> равным порядковому
+        номеру элемента табов.
+      </p>
+    </div>
+    <div data-tabs-item>
+      <p>
+        <b>(tabs.item)</b>. Данный элемент имеет порядковый номер: <b>1</b>. Это
+        некий заполнитель для элемента табов, который располагается строго
+        внутри <b>(tabs)</b>. По умолчанию он скрыт. Однако, если ему добавить
+        атрибут <b>(data-active)</b> то он будет открыт. Чтобы показать элемент
+        табов можно воспользоваться следующими <b>(data-action)</b> у{" "}
+        <b>(tabs.control)</b>: <b>(show)</b> с <b>(args)</b> равным порядковому
+        номеру элемента табов.
+      </p>
+    </div>
+    <div data-tabs-item>
+      <p>
+        <b>(tabs.item)</b>. Данный элемент имеет порядковый номер: <b>2</b>. Это
+        некий заполнитель для элемента табов, который располагается строго
+        внутри <b>(tabs)</b>. По умолчанию он скрыт. Однако, если ему добавить
+        атрибут <b>(data-active)</b> то он будет открыт. Чтобы показать элемент
+        табов можно воспользоваться следующими <b>(data-action)</b> у{" "}
+        <b>(tabs.control)</b>: <b>(show)</b> с <b>(args)</b> равным порядковому
+        номеру элемента табов.
+      </p>
+    </div>
+  </div>
+</div>
+
+```html
+<button
+  data-action="show"
+  data-tabs-id="tabs_example"
+  data-args="0"
+  type="button"
+>
+  <b>(tabs.control)</b> <b>(show)</b> <b>(0)</b> Показать элемент 0
+</button>
+<button
+  data-action="show"
+  data-tabs-id="tabs_example"
+  data-args="1"
+  type="button"
+>
+  <b>(tabs.control)</b> <b>(show)</b> <b>(1)</b> Показать элемент 1
+</button>
+<button
+  data-action="show"
+  data-tabs-id="tabs_example"
+  data-args="2"
+  type="button"
+>
+  <b>(tabs.control)</b> <b>(show)</b> <b>(2)</b> Показать элемент 2
+</button>
+<div id="tabs_example" data-tabs>
+  <div data-active data-tabs-item>
+    <p>
+      <b>(tabs.item)</b>. Данный элемент имеет порядковый номер: <b>0</b>. Это
+      некий заполнитель для элемента табов, который располагается строго внутри
+      <b>(tabs)</b>. По умолчанию он скрыт. Однако, если ему добавить атрибут
+      <b>(data-active)</b> то он будет открыт. Чтобы показать элемент табов
+      можно воспользоваться следующими <b>(data-action)</b> у
+      <b>(tabs.control)</b>: <b>(show)</b> с <b>(args)</b> равным порядковому
+      номеру элемента табов.
+    </p>
+  </div>
+  <div data-tabs-item>
+    <p>
+      <b>(tabs.item)</b>. Данный элемент имеет порядковый номер: <b>1</b>. Это
+      некий заполнитель для элемента табов, который располагается строго внутри
+      <b>(tabs)</b>. По умолчанию он скрыт. Однако, если ему добавить атрибут
+      <b>(data-active)</b> то он будет открыт. Чтобы показать элемент табов
+      можно воспользоваться следующими <b>(data-action)</b> у
+      <b>(tabs.control)</b>: <b>(show)</b> с <b>(args)</b> равным порядковому
+      номеру элемента табов.
+    </p>
+  </div>
+  <div data-tabs-item>
+    <p>
+      <b>(tabs.item)</b>. Данный элемент имеет порядковый номер: <b>2</b>. Это
+      некий заполнитель для элемента табов, который располагается строго внутри
+      <b>(tabs)</b>. По умолчанию он скрыт. Однако, если ему добавить атрибут
+      <b>(data-active)</b> то он будет открыт. Чтобы показать элемент табов
+      можно воспользоваться следующими <b>(data-action)</b> у
+      <b>(tabs.control)</b>: <b>(show)</b> с <b>(args)</b> равным порядковому
+      номеру элемента табов.
+    </p>
+  </div>
+</div>
+```
+
+## Установка / Подключение
+
+Список PHP библиотек:
+
+- welpodron.core
+
+Список зависимостей:
+
+- <a href="/javascript/javascript-modules/welpodron-animation">
+    welpodron.animation
+  </a>
+
+:::caution Внимание
+
+Перед подключением компонента убедитесь, что все необходимые для требуемого компонента зависимости установлены и подключены!
+
+:::
+
+Установка и подключение компонента происходит в соответствии с <a href="/javascript/intro#установка-модулейкомпонентов">документацией</a>
+
+## Использование
+
+### Использование через HTML
+
+```html title="html"
+<div id="tabs_id" data-tabs>
+  Это tabs ...
+  <div [data-active] data-tabs-item>Это 0 tabs.item ...</div>
+  <div [data-active] data-tabs-item>Это 1 tabs.item ...</div>
+  ...
+  <div [data-active] data-tabs-item>Это {N} tabs.item ...</div>
+  ...
+</div>
+...
+<div data-tabs-id="tabs_id" data-action="show" data-args="0">
+  Это tabs.control для 0 tabs.item ...
+</div>
+<div data-tabs-id="tabs_id" data-action="show" data-args="1">
+  Это tabs.control для 1 tabs.item ...
+</div>
+<div data-tabs-id="tabs_id" data-action="show" data-args="{N}">
+  Это tabs.control для {N} tabs.item ...
+</div>
+...
+```
+
+## HTML атрибуты
+
+### tabs
+
+- Атрибут: `id`
+  - Описание: _**Уникальный** идентификатор компонента_
+  - Обязателен: **Да**
+- Атрибут: `data-tabs`
+  - Описание: _Указатель компонента_
+  - Обязателен: **Да**
+
+### tabs.item
+
+**Располагается строго внутри `tabs`**
+
+- Атрибут: `data-tabs-item`
+  - Описание: _Указатель принадлежности к компоненту `tabs`_
+  - Обязателен: **Да\***
+
+\* - в случае если атрибут `data-tabs-item` не будет указан, тег, лежащий внутри тега с атрибутом `tabs`, не будет восприниматься как элемент `tabs`
+
+- Атрибут: `data-active`
+  - Описание: _Указатель активности текущего элемента_
+  - Обязателен: Нет\*\*
+
+\*\* - в случае если атрибут `data-active` не будет указан ни одному `data-tabs-item` - активным элементом станет первый найденный `data-tabs-item`, лежащий внутри `tabs`
+
+### tabs.control
+
+- Атрибут: `data-tabs-id`
+  - Описание: _Идентификатор tabs_
+  - Обязателен: **Да**
+  - Возможные значения: Значение атрибута `id` у `tabs`
+- Атрибут: `data-action`
+  - Описание: _Экшн компонента_
+  - Обязателен: **Да**
+  - Возможные значения:
+    - `show`
+      - Описание: _Показать элемент имеющий порядковый номер указанный в `data-args`_
+      - Возможные значения аргументов `data-args`:
+        - Любое число от `0` до `{N}`, обозначающее порядковый номер элемента `tabs.item` (нумерация элементов начинается с `0`)

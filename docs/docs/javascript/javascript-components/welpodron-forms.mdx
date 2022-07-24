@@ -1,0 +1,325 @@
+---
+title: Формы
+sidebar_position: 1000
+pagination_prev: null
+pagination_next: null
+---
+
+# welpodron.forms
+
+Комплексный компонент форм, состоящих из групп полей
+
+## Установка / Подключение
+
+Список PHP библиотек:
+
+- welpodron.form
+
+Список зависимостей:
+
+- <a href='/javascript/javascript-components/welpodron-modal'>
+    welpodron.modal
+  </a>
+- <a href='/javascript/javascript-modules/welpodron-templater'>
+    welpodron.templater
+  </a>
+- <a href='/javascript/javascript-modules/welpodron-request'>
+    welpodron.request
+  </a>
+
+:::caution Внимание
+
+Перед подключением компонента убедитесь, что все необходимые для требуемого компонента зависимости установлены и подключены!
+
+:::
+
+Установка и подключение компонента происходит в соответствии с <a href="/javascript/intro#установка-модулейкомпонентов">документацией</a>
+
+## Использование
+
+### Использование через HTML
+
+```html title="html"
+<form
+  data-cap="токен GOOGLE RECAPTCHA V3"
+  data-form
+  [id]
+  action="[<?=UrlManager::getInstance()->create('welpodron:form.controller.requests.add')?>] [Пользовательское значение]"
+>
+  Это form ...
+  <div data-fieldset>
+    Это form.fieldset ...
+    <div
+      data-field
+      data-name="field_name_from_schema_01"
+      data-type="[hidden] [text] [tel] [email]"
+    >
+      Это form.field типа input ...
+      <input type="[hidden] [text] [tel] [email]" />
+    </div>
+    ...
+    <div
+      data-field
+      data-name="field_name_from_schema_02"
+      data-type="[textarea]"
+    >
+      Это form.field типа textarea ...
+      <textarea></textarea>
+    </div>
+  </div>
+  ...
+</form>
+```
+
+## HTML атрибуты
+
+### form
+
+- Атрибут: `data-form`
+  - Описание: _Указатель компонента_
+  - Обязателен: **Да**
+- Атрибут: `data-cap`
+  - Описание: _Публичный токен Google Recaptcha v3_
+  - Обязателен: **Да**
+- Атрибут: `action`
+  - Описание: _Путь к контроллеру_
+  - Обязателен: **Да**
+  - Возможные значения:
+    - `Значение полученное с использованием Bitrix API (UrlManager)`
+      - Описание: _Рекомендуется использовать PHP конструкцию вида: `<?=UrlManager::getInstance()->create('welpodron:form.controller.requests.add')?>`_
+    - Другие пользовательские значения
+- Атрибут: `id`
+  - Описание: _**Уникальный** идентификатор компонента_
+  - Обязателен: Нет
+
+### form.fieldset
+
+- Атрибут: `data-fieldset`
+  - Описание: _Указатель компонента_
+  - Обязателен: **Да**
+
+`form.fieldset` - группа, по которой группируются поля. Данный компонент позволяет создавать группы конструкций множественного выбора разных полей.
+
+:::caution Внимание
+
+Форма должна иметь хотя бы 1 `form.fieldset`
+
+:::
+
+### form.field
+
+- Атрибут: `data-field`
+  - Описание: _Указатель компонента_
+  - Обязателен: **Да**
+- Атрибут: `data-name`
+  - Описание: _Идентификатор поля из схемы_
+  - Обязателен: **Да**
+  - Возможные значения:
+    - Значение из схемы формы
+    - Другие пользовательские значения
+- Атрибут: `data-type`
+  - Описание: _Тип поля_
+  - Обязателен: **Да**
+  - Возможные значения:
+    - `hidden`
+      - Описание: _Скрытое поле_
+    - `text`
+      - Описание: _Строковое поле_
+    - `textarea`
+      - Описание: _Многострочный текст_
+    - `tel`
+      - Описание: _Поле для ввода телефона_
+    - `email`
+      - Описание: _Поле для ввода email_
+
+`form.field` - поле формы. Каждое поле формы должно быть привязано со схемой, создаваемой в административном разделе через атрибут `data-name`. Поле должно содержать тег `input` или `textarea` с типом указанным на поле.
+
+:::caution Внимание
+
+Форма должна содержать хотя бы 1 поле со значением атрибута `data-name` равным `sessid`. Данное поле должно содержать тег `input` имеющим в качестве `value` идентификатор текущей сессии
+
+:::
+
+:::caution Внимание
+
+Форма должна содержать хотя бы 1 поле со значением атрибута `data-name` равным `schemaid`. Данное поле должно содержать тег `input` имеющим в качестве `value` идентификатор схемы формы, созданной в административном разделе
+
+:::
+
+## Пользовательское соглашение: welpodron.forms.agreement
+
+Пользовательское соглашение подразумевает нахождение внутри `welpodron.form`
+
+### Использование
+
+#### Использование через HTML
+
+```html title="html"
+... Здесь начало компонента welpodron.form ... Это agreement.indicator ...
+<input
+  data-agreement-action="listen"
+  data-agreement-indicator
+  data-agreement-id="agreement_id"
+  type="checkbox"
+/>
+...
+<div [data-active] data-agreement id="agreement_id">
+  Это agreement ...
+  <button
+    data-agreement-action="[accept] [decline]"
+    data-agreement-id="agreement_id"
+    type="button"
+  >
+    Это agreement.control ...
+  </button>
+  ...
+</div>
+... Здесь конец компонента welpodron.form ...
+```
+
+### HTML атрибуты
+
+#### agreement
+
+- Атрибут: `id`
+  - Описание: _**Уникальный** идентификатор компонента_
+  - Обязателен: **Да**
+- Атрибут: `data-agreement`
+  - Описание: _Указатель компонента_
+  - Обязателен: **Да**
+- Атрибут: `data-active`
+  - Описание: _Указатель принято ли пользовательское соглашение по умолчанию_
+  - Обязателен: Нет
+
+#### agreement.control
+
+- Атрибут: `data-agreement-id`
+  - Описание: _Идентификатор agreement_
+  - Обязателен: **Да**
+  - Возможные значения: Значение атрибута `id` у `agreement`
+- Атрибут: `data-agreement-action`
+  - Описание: _Экшн компонента_
+  - Обязателен: **Да**
+  - Возможные значения:
+    - `accept`
+      - Описание: _Принять соглашение_
+    - `decline`
+      - Описание: _Отвергнуть соглашение_
+
+#### agreement.indicator
+
+- Атрибут: `data-agreement-id`
+  - Описание: _Идентификатор agreement_
+  - Обязателен: **Да**
+  - Возможные значения: Значение атрибута `id` у `agreement`
+- Атрибут: `data-agreement-indicator`
+  - Описание: _Указатель компонента_
+  - Обязателен: **Да**
+- Атрибут: `data-agreement-action`
+  - Описание: _Экшн компонента_
+  - Обязателен: **Да**
+  - Возможные значения:
+    - `listen`
+      - Описание: _Прослушивать изменения соглашения_
+
+## Примеры
+
+### Форма обратной связи с телефонной маской в модальном окне с использованием Bitrix API
+
+```php title="php"
+<button data-action="show" data-modal-id="modal_example" type="button">Оставить заявку</button>
+<div id="modal_example" data-modal>
+  <div>
+    <form id="form_example" data-cap="токен GOOGLE RECAPTCHA V3" data-form action="<?=UrlManager::getInstance()->create('welpodron:form.controller.requests.add')?>">
+      <?$agreementModalId = 'modal_'.md5(uniqid('', false));?>
+      <?$agreementId = 'agreement_'.md5(uniqid('', false));?>
+      <ul data-fieldset>
+        <li data-field data-name="sessid" data-type="hidden">
+          <input type="hidden" value="<?=bitrix_sessid()?>" />
+        </li>
+        <li data-field data-name="schemaid" data-type="hidden">
+          <input type="hidden" value="ID схемы созданной в административном разделе" name="schemaid">
+        </li>
+        <li data-field data-name="name" data-type="text">
+          <label>
+            <span>Имя</span>
+            <input type="text" name="name">
+          </label>
+        </li>
+        <li data-field data-name="tel" data-type="tel">
+          <label>
+            <span>Телефон</span>
+            <input data-tel-mask type="tel" name="tel">
+          </label>
+        </li>
+        <li data-field data-name="msg" data-type="textarea">
+          <label>
+            <span>Сообщение</span>
+            <textarea name="msg"></textarea>
+          </label>
+        </li>
+        <li>
+          <label data-action="show" data-modal-id="<?=$agreementModalId?>">
+            <input data-agreement-action="listen" data-agreement-indicator data-agreement-id="<?=$agreementId?>" required type="checkbox">
+            <span>Я принимаю условия передачи информации</span>
+          </label>
+        </li>
+      </ul>
+      <div>
+        <button type="submit">Отправить заявку</button>
+        <button data-action="hide" data-modal-id="modal_example" type="button">Закрыть окно</button>
+      </div>
+      <?$APPLICATION->IncludeComponent('welpodron:form.agreement', 'TEMPLATE_FOR_AGREEMENT', [
+          'ID' => '1',	// Id соглашения
+          'FIELDS' => 'Имя, Телефон',	// Поля соглашения
+          'CACHE_TYPE' => 'A',	// Тип кеширования
+          'CACHE_TIME' => '36000',	// Время кеширования (сек.)
+          'CACHE_GROUPS' => 'Y',	// Учитывать права доступа
+          'MODAL_ID' => $agreementModalId,
+          'AGREEMENT_ID' => $agreementId,
+      ],
+        false
+      );?>
+    </form>
+  </div>
+</div>
+```
+
+Файл шаблона компонента `welpodron:form.agreement` (в данном случае шаблон имеет название `TEMPLATE_FOR_AGREEMENT`)
+
+```php title="TEMPLATE_FOR_AGREEMENT.php"
+<?
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    die();
+}
+
+/** @var array $arParams */
+/** @var array $arResult */
+/** @global CMain $APPLICATION */
+/** @global CUser $USER */
+/** @global CDatabase $DB */
+/** @var CBitrixComponentTemplate $this */
+/** @var string $templateName */
+/** @var string $templateFile */
+/** @var string $templateFolder */
+/** @var string $componentPath */
+/** @var CBitrixComponent $component */
+?>
+
+<?if ($arResult): ?>
+<div id="<?=$arParams['MODAL_ID']?>" data-modal role="dialog" aria-modal="true">
+    <div data-active data-agreement id="<?=$arParams['AGREEMENT_ID']?>">
+        <div>
+            <p>Согласие на обработку персональных данных</p>
+            <p>
+                <?=($arResult)?>
+            </p>
+        </div>
+        <div>
+            <button data-agreement-action="accept" data-agreement-id="<?=$arParams['AGREEMENT_ID']?>" data-action="hide" data-modal-id="<?=$arParams['MODAL_ID']?>" type="button">Принять</button>
+            <button data-agreement-action="decline" data-agreement-id="<?=$arParams['AGREEMENT_ID']?>" data-action="hide" data-modal-id="<?=$arParams['MODAL_ID']?>" type="button">Отклонить</button>
+        </div>
+    </div>
+</div>
+<?endif?>
+```
