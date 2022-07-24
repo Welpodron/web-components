@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Documentation site for web-components library',
-  url: 'https://web-components',
+  url: 'https://welpodron.github.io',
   baseUrl: '/web-components/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -15,7 +15,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Welpodron', // Usually your GitHub org/user name.
+  organizationName: 'welpodron', // Usually your GitHub org/user name.
   projectName: 'web-components', // Usually your repo name.
   trailingSlash: false,
 
