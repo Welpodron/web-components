@@ -2,6 +2,8 @@
 // `context` is provided by Docusaurus. Example: siteConfig can be accessed from context.
 // `opts` is the user-defined options.
 module.exports = function (context, opts) {
+    const baseUrl = context.siteConfig.baseUrl;
+
     return {
       // A compulsory field used as the namespace for directories to cache
       // the intermediate data for each plugin.
@@ -14,19 +16,19 @@ module.exports = function (context, opts) {
         // console.log(opts);
         return {
           headTags: [
-            `<link rel="stylesheet" href="/css/collapse/style.css" type="text/css">`,
-            `<link rel="stylesheet" href="/css/carousel/style.css" type="text/css">`,
-            `<link rel="stylesheet" href="/css/tabs/style.css" type="text/css">`,
-            `<link rel="stylesheet" href="/css/modal/style.css" type="text/css">`,
+            `<link rel="stylesheet" href="${baseUrl}css/collapse/style.css" type="text/css">`,
+            `<link rel="stylesheet" href="${baseUrl}css/carousel/style.css" type="text/css">`,
+            `<link rel="stylesheet" href="${baseUrl}css/tabs/style.css" type="text/css">`,
+            `<link rel="stylesheet" href="${baseUrl}css/modal/style.css" type="text/css">`,
           ],
           postBodyTags: [
-            `<script src="/js/core/script.js"></script>`,
-            `<script src="/js/animation/script.js"></script>`,
-            `<script src="/js/collapse/script.js"></script>`,
-            `<script src="/js/accordion/script.js"></script>`,
-            `<script src="/js/tabs/script.js"></script>`,
-            `<script src="/js/carousel/script.js"></script>`,
-            `<script src="/js/modal/script.js"></script>`
+            `<script src="${baseUrl}js/core/script.js"></script>`,
+            `<script src="${baseUrl}js/animation/script.js"></script>`,
+            `<script src="${baseUrl}js/collapse/script.js"></script>`,
+            `<script src="${baseUrl}js/accordion/script.js"></script>`,
+            `<script src="${baseUrl}js/tabs/script.js"></script>`,
+            `<script src="${baseUrl}js/carousel/script.js"></script>`,
+            `<script src="${baseUrl}js/modal/script.js"></script>`
           ],
         };
       },
