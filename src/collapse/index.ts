@@ -2,6 +2,8 @@ export interface IWelpodronCollapseHTMLElement extends HTMLElement {
   collapseInstance: WelpodronCollapse;
 }
 
+// TODO: Maybe rewrite accordion section like carousel one?
+
 export class WelpodronCollapse {
   element: IWelpodronCollapseHTMLElement;
   active: boolean;
